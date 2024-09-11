@@ -19,7 +19,7 @@ public class ex2 {
         System.out.println("Valores: "+ Arrays.toString(arr));
         for (int j : arr) {
             soma += j;
-
+    
         }
         media = soma/arr.length;
         System.out.println("Soma:" +soma+ "/n"+
