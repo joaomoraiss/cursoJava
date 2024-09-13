@@ -2,7 +2,6 @@ package secao10.lists;
 
 import java.sql.SQLOutput;
 import java.util.ArrayList;
-import java.util.Optional;
 import java.util.Scanner;
 
 public class listEx {
@@ -12,6 +11,18 @@ public class listEx {
 
         System.out.println("Quantos funcionarios?");
         int qntdFuncionario = sc.nextInt();
+        adicionarFuncionario(qntdFuncionario, funcionarios);
+        System.out.println("Digite o porcento de aumento e a id do funcionario");
+        int pct = sc.nextInt();
+        int aumentoId = sc.nextInt();
+        aumentarSalario(pct, aumentoId, funcionarios);
+        for (Funcionario j : funcionarios){
+            String result = j.toString();
+            System.out.println(result);
+        }
+    }
+    public static void adicionarFuncionario(int qntdFuncionario, ArrayList<Funcionario> funcionarios){
+        Scanner sc = new Scanner(System.in);
         for (int i = 0; i < qntdFuncionario; i++){
             int id;
             String nome;
@@ -25,15 +36,13 @@ public class listEx {
             salario = sc.nextDouble();
             if (funcionarios.stream().anyMatch(x -> x.getId() == id)){
                 System.out.println("Id ja adicionado");
-                return;
             }else{
                 Funcionario funcionario = new Funcionario(id, nome, salario);
                 funcionarios.add(funcionario);
             }
         }
-        System.out.println("Digite o porcento de aumento e a id do funcionario");
-        int pct = sc.nextInt();
-        int aumentoId = sc.nextInt();
+    }
+    public static void aumentarSalario(int pct, int aumentoId, ArrayList<Funcionario> funcionarios){
         if (funcionarios.stream().anyMatch(x -> x.getId() == aumentoId)){
             funcionarios.stream()
                     .filter(f -> f.getId() == aumentoId)
@@ -41,11 +50,6 @@ public class listEx {
                     .ifPresent(f -> f.aumentoSalario(pct));
         } else {
             System.out.println("Id não encontrado");
-            return;
-        }
-        for (Funcionario j : funcionarios){
-            String result = j.toString();
-            System.out.println(result);
         }
     }
 }
