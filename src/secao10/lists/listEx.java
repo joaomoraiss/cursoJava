@@ -1,6 +1,5 @@
 package secao10.lists;
 
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Scanner;
 
