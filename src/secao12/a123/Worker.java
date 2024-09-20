@@ -7,6 +7,7 @@ public class Worker {
     private WorkerLevel level;
     private Double baseSalary;
     private ArrayList<HourContrat> contratos = new ArrayList<>();
+    private Departament departament;
 
     public Worker(String name, WorkerLevel level, Double baseSalary) {
         this.name = name;
@@ -28,6 +29,14 @@ public class Worker {
             }
         }
         return salary;
+    }
+
+    public Departament getDepartament() {
+        return departament;
+    }
+
+    public void setDepartament(Departament departament) {
+        this.departament = departament;
     }
 
     public String getName() {
