@@ -8,6 +8,8 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
+        System.out.println("Qual o departamento do trabalhador?");
+        Departament dp = new Departament(sc.nextLine());
         System.out.println("Digite o nome do trabalhador: ");
         String name = sc.nextLine();
         System.out.println("Digite o nivel do trabalhador sabendo que 1.JUNIOR " +
@@ -17,6 +19,7 @@ public class Main {
         double salary = sc.nextDouble();
 
         Worker worker = new Worker(name,createWorkerLevelByNumber(nivel), salary);
+        worker.setDepartament(dp);
 
         System.out.println("Quantos contratos a ser adicionado?");
         int qntdContratos = sc.nextInt();
