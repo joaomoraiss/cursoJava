@@ -23,11 +23,8 @@ public class Worker {
     }
     public double income(Integer year, Integer month){
         double salary = baseSalary;
-        for (HourContrat c : contratos){
-            if (c.getDate().getYear() == year && c.getDate().getMonthValue() == month){
-                salary += c.totalValue();
-            }
-        }
+        for (HourContrat c : contratos)
+            if (c.getDate().getYear() == year && c.getDate().getMonthValue() == month) salary += c.totalValue();
         return salary;
     }
 
