@@ -8,6 +8,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
+        //COLETA DE DADOS
         System.out.println("Qual o departamento do trabalhador?");
         Departament dp = new Departament(sc.nextLine());
         System.out.println("Digite o nome do trabalhador: ");
@@ -18,6 +19,7 @@ public class Main {
         System.out.println("Qual o salario base do trabalhador: ");
         double salary = sc.nextDouble();
 
+        //CRIANDO WORKER
         Worker worker = new Worker(name,createWorkerLevelByNumber(nivel), salary);
         worker.setDepartament(dp);
 
@@ -27,6 +29,7 @@ public class Main {
 
         criarContratos(qntdContratos, worker);
 
+        //CONSULTANDO
         System.out.println("Qual o ano que dejesa consultar o salario?");
         int anoConsulta = sc.nextInt();
         System.out.println("Qual o mês do ano "+anoConsulta+" deseja consultar?");
