@@ -62,4 +62,10 @@ public class Worker {
     public void setBaseSalary(Double baseSalary) {
         this.baseSalary = baseSalary;
     }
+
+    public String toString(){
+        return "Nome: "+name+"\n"+
+                "Level: "+level+"\n"+
+                "Salario base: "+baseSalary;
+    }
 }
