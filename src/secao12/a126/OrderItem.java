@@ -9,9 +9,9 @@ public class OrderItem {
         return price * quantity;
     }
 
-    public OrderItem(Integer quantity, Double price, Product product) {
+    public OrderItem(Integer quantity, Product product) {
         this.quantity = quantity;
-        this.price = price;
+        this.price = product.getPrice();
         this.product = product;
     }
 
@@ -37,5 +37,12 @@ public class OrderItem {
 
     public void setProduct(Product product) {
         this.product = product;
+    }
+
+    public String toString(){
+        StringBuilder str = new StringBuilder();
+        str.append(product.getName()+", $"+price+", "+
+                "Quantity: "+quantity+", " +"Subtotal: $"+subTotal());
+        return str.toString();
     }
 }
