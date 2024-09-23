@@ -56,4 +56,11 @@ public class Post {
     public void addComment(Comment comment){
         this.comments.add(comment);
     }
+
+    public String toString(){
+        StringBuilder str = new StringBuilder();
+        str.append(title+"\n"+likes+" - "+moment+"\n"+content+"\n"+"Comments: "+"\n");
+        for (Comment c : comments) str.append(c.getText()+"\n");
+        return str.toString();
+    }
 }
