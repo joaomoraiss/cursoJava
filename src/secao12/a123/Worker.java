@@ -63,6 +63,10 @@ public class Worker {
         this.baseSalary = baseSalary;
     }
 
+    public ArrayList<HourContrat> getContratos() {
+        return contratos;
+    }
+
     public String toString(){
         return "Nome: "+name+"\n"+
                 "Level: "+level+"\n"+
