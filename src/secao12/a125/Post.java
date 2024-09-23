@@ -1,5 +1,6 @@
 package secao12.a125;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Post {
@@ -7,12 +8,17 @@ public class Post {
     private String title;
     private String content;
     private Integer likes;
+    private ArrayList<Comment> comments = new ArrayList<>();
 
     public Post(Date moment, String title, String content, Integer likes) {
         this.moment = moment;
         this.title = title;
         this.content = content;
         this.likes = likes;
+    }
+
+    public ArrayList<Comment> getComments() {
+        return comments;
     }
 
     public Date getMoment() {
@@ -45,5 +51,9 @@ public class Post {
 
     public void setLikes(Integer likes) {
         this.likes = likes;
+    }
+
+    public void addComment(Comment comment){
+        this.comments.add(comment);
     }
 }
