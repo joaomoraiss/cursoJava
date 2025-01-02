@@ -7,7 +7,7 @@ public class ex135 {
         Scanner sc = new Scanner(System.in);
         System.out.println("Quantos funcionarios?");
         int fqtd = sc.nextInt();
-        for (int i = 0; i < fqtd; i++){
+        for (int i = 0; i < fqtd; i++) {
             System.out.println("Nome:");
             String nome = sc.nextLine();
             System.out.println("Horas:");
@@ -16,4 +16,5 @@ public class ex135 {
             Double valorpHora = sc.nextDouble();
             Employee employee = new Employee(nome, horas, valorpHora);
         }
+    }
 }
